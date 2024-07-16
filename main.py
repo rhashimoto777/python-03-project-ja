@@ -25,7 +25,7 @@ cities.append({"jp":"札幌", "en":"Sapporo"})
 #________________________________________________________________________________________________________________________
 def add_city_id():
     """
-    city_idは都市ごとにuniqueであれば何でも良いので，citiesのindexをIDとして用いる。
+    city_idは都市ごとにuniqueであれば何でも良いので、citiesのindexをIDとして用いる。
     IDが自動で採番されることと合わせて、これらによりIDの唯一性を担保する。
     """
     for i, elem in enumerate(cities):
