@@ -1,41 +1,74 @@
 from abc import ABC, abstractmethod
 import requests
 import pandas as pd
-import sqlite3
+import json
 
 #________________________________________________________________________________________________________________________
 class Data(ABC):
-    def __init__(self, API_key):
+    def __init__(self, API_key, is_local_mode):
         self.API_key = API_key
+        self.is_local_mode = is_local_mode
 
-    def _fetch_data(self, url):
-        try:
-            response = requests.get(url)
-            if response.status_code == 200:
-                return response.json()
-            else:
-                print(f"Error : response.status_code = {response.status_code}")
+    def _get_data(self, city_name):
+        json_file_name = self._get_json_file_name(city_name)
+
+        if self.is_local_mode == False:
+            endpoint, params = self._get_endpoint_and_params(city_name)
+            try:
+                response = requests.get(endpoint, params)
+                if response.status_code == 200:
+                    data = response.json()
+                    self._dump_to_json(data, json_file_name)
+                    return data
+                else:
+                    print(f"Error : response.status_code = {response.status_code}")
+                    return None
+            except Exception as e:
+                print(f"Error fetching data: {e}")
                 return None
-        except Exception as e:
-            print(f"Error fetching data: {e}")
-            return None
-        
+        else:            
+            with open(f"{json_file_name}.json", "r") as file:
+                data = json.load(file)
+                return data
+
+    
+    # @abstractmethod
+    def _get_endpoint_and_params(self, city_name):
+        pass
+
+    # @abstractmethod
+    def _get_json_file_name(self, city_name):
+        return city_name
+
+    def _dump_to_json(self, data, filename):
+        if self.is_local_mode == False:
+            with open(f"{filename}.json", "w", encoding='utf-8') as file:
+                json.dump(data, file, ensure_ascii=False, indent=4, sort_keys=True)
+        else:
+            pass
+        return
 
 #________________________________________________________________________________________________________________________
 class WeatherData(Data):
-    def __init__(self, API_key):
-        super().__init__(API_key)
+    def __init__(self, API_key, is_local_mode):
+        super().__init__(API_key, is_local_mode)
     
-    def __gen_url(self, city_name):
-        openweather_url = f"http://api.openweathermap.org/data/2.5/weather?q={city_name},jp&appid={self.API_key}"
-        return openweather_url
+    def _get_endpoint_and_params(self, city_name):
+        openweather_url = "http://api.openweathermap.org/data/2.5/weather"
+        params = {
+            'q': city_name,
+            'apiKey': self.API_key
+        }
+        return openweather_url, params
+    
+    def _get_json_file_name(self, city_name):
+        return f'weather_{city_name}'
     
     def make_df(self, cities):
         dict = []
         for i, city in enumerate(cities):
             city_name = city["en"]
-            url = self.__gen_url(city_name)
-            data = self._fetch_data(url)
+            data = self._get_data(city_name)
             dict.append({
                 'city_id'       : city["city_id"],
                 'city_name'     : city_name,                # for debug
@@ -50,31 +83,30 @@ class WeatherData(Data):
 
 #________________________________________________________________________________________________________________________
 class NewsData(Data):
-    def __init__(self, API_key):
-        super().__init__(API_key)
+    def __init__(self, API_key, is_local_mode):
+        super().__init__(API_key, is_local_mode)
     
-    # def __gen_url(self, city_name):
-    #     news_url = f"https://newsapi.org/v2/everything?q='{city_name}'&appid={self.API_key}"
-    #     return news_url
+    def _get_endpoint_and_params(self, city_name):
+        news_url = 'https://newsapi.org/v2/everything'
+        params = {
+            'q': city_name,
+            'sortBy': 'popularity',
+            'from'  : '2024-07-09',
+            'apiKey': self.API_key
+        }
+        return news_url, params
+
+    def _get_json_file_name(self, city_name):
+        return f'news_{city_name}'
     
     def make_df(self, cities):
         dict = []
         for i, city in enumerate(cities):
             city_name = city["jp"]
-            # url = self.__gen_url(city_name)
-            # data = self._fetch_data(url)
-
-            ENDPOINT = 'https://newsapi.org/v2/everything'
-            params = {
-                'q': city_name,
-                # 'language': 'ja',
-                # 'sortBy': 'publishedAt',
-                'apiKey': self.API_key
-            }
-            response = requests.get(ENDPOINT, params=params)
-            print(response.status_code)
-            data = response.json()
-            breakpoint()
+            data = self._get_data(city_name)
+            
+            with open(f"news_{city_name}2.json", "w", encoding='utf-8') as file:
+                json.dump(data, file, ensure_ascii=False, indent=4, sort_keys=True)
             
             dict.append({
                 'city_id'       : city["city_id"],
