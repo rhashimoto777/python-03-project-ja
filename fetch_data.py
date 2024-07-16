@@ -56,6 +56,10 @@ class Data(ABC):
             pass
         return
 
+    # @abstractmethod
+    def print_df_for_debug(self, df):
+        pass
+
 #________________________________________________________________________________________________________________________
 class WeatherData(Data):
     def __init__(self, API_key, is_local_mode):
@@ -78,16 +82,21 @@ class WeatherData(Data):
             city_name = city["en"]
             data = self._get_data(city_name)
             dict.append({
-                'city_id'       : city["city_id"],
-                'weather_id'    : i,
-                'temperature'   : data['main']['temp']-273.15,
-                'weather'       : data['weather'][0]['description'],
-                '(DEBUG)city_name'     : city_name,                # for debug
-                '(DEBUG)lat'           : data['coord']['lat'],     # for debug
-                '(DEBUG)lon'           : data['coord']['lon']     # for debug
+                'city_id'     : city["city_id"],
+                'weather_id'  : i,
+                'temperature' : data['main']['temp']-273.15,
+                'weather'     : data['weather'][0]['description'],
+                '(DEBUG)city_name' : city_name,                # for debug
+                '(DEBUG)lat'       : data['coord']['lat'],     # for debug
+                '(DEBUG)lon'       : data['coord']['lon']     # for debug
             })
         df = pd.DataFrame(dict)
         return(df)
+
+    def print_df_for_debug(self, df):    
+        print("\n######################## debug : weather_df ########################")
+        print(df)
+        return
 
 #________________________________________________________________________________________________________________________
 class NewsData(Data):
@@ -98,7 +107,7 @@ class NewsData(Data):
         news_url = 'https://newsapi.org/v2/everything'
         params = {
             'q': city_name,
-            'domains' : 'nhk.or.jp',
+            'domains' : 'nhk.or.jp', # 対象記事はNHKに限定する．
             'sortBy'  : 'publishedAt',
             'apiKey'  : self.API_key
         }
@@ -106,6 +115,22 @@ class NewsData(Data):
 
     def _get_json_file_name(self, city_name):
         return f'news_{city_name}'
+
+    def __extract_news(self, data, city_name):
+        max_news_num = 3
+        list = []
+        for elem in data["articles"]:
+            if city_name in elem["title"]:
+                abstract = f'【{elem["publishedAt"][:10]}】{elem["title"]}'
+                list.append(abstract)
+                if len(list) >= max_news_num:
+                    return list
+
+        # もしも十分数記事が取得できなかった場合に，配列外アクセスを防ぐために空の要素を加える
+        for i in range(max_news_num - len(list)):
+            abstract = ""
+            list.append(abstract)
+        return list
     
     def make_df(self, cities):
         dict = []
@@ -114,28 +139,23 @@ class NewsData(Data):
             data = self._get_data(city_name)
             news_list = self.__extract_news(data, city_name)
             dict.append({
-                'city_id'       : city["city_id"],
-                'news_id'       : i,
-                'news_1'        : news_list[0],
-                'news_2'        : news_list[1],
-                'news_3'        : news_list[2],
-                '(DEBUG)city_name'     : city_name
+                'city_id' : city["city_id"],
+                'news_id' : i,
+                'news_1'  : news_list[0],
+                'news_2'  : news_list[1],
+                'news_3'  : news_list[2],
+                '(DEBUG)city_name' : city_name
             })
         df = pd.DataFrame(dict)
         return(df)
 
-    def __extract_news(self, data, city_name):
-        max_news_num = 3
-        list = []
-        for elem in data["articles"]:
-            if city_name in elem["title"]:
-                abstract = f'【{elem["publishedAt"][:10]}】【{elem["source"]["name"]}】{elem["title"]}'
-                list.append(abstract)
-                if len(list) >= max_news_num:
-                    return list
-
-        for i in range(max_news_num - len(list)):
-            abstract = ""
-            list.append(abstract)
-        return list
+    def print_df_for_debug(self, df):   
+        print("\n######################## debug : news_df ########################")
+        for i in range(len(df)):
+            elem = df.iloc[i]
+            print(f'city_id = {elem.loc["city_id"]}, news_id = {elem.loc["news_id"]}, (DEBUG)city_name = {elem.loc["(DEBUG)city_name"]}')
+            print(f' - news_1 : {elem.loc["news_1"]}')
+            print(f' - news_2 : {elem.loc["news_2"]}')
+            print(f' - news_3 : {elem.loc["news_3"]}\n')
+        return
 
