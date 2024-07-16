@@ -29,7 +29,7 @@ class Data(ABC):
                 return None
         else:
             self._chdir_to_json_dump()            
-            with open(f"{json_file_name}.json", "r") as file:
+            with open(f"{json_file_name}.json", "r", encoding='utf-8') as file:
                 data = json.load(file)
                 return data
 
@@ -40,7 +40,7 @@ class Data(ABC):
 
     # @abstractmethod
     def _get_json_file_name(self, city_name):
-        return city_name
+        pass
     
     def _chdir_to_json_dump(self):
         path = f'{os.path.dirname(os.path.abspath(__file__))}\json_dump'
@@ -79,12 +79,12 @@ class WeatherData(Data):
             data = self._get_data(city_name)
             dict.append({
                 'city_id'       : city["city_id"],
-                'city_name'     : city_name,                # for debug
-                'lat'           : data['coord']['lat'],     # for debug
-                'lon'           : data['coord']['lon'],     # for debug
                 'weather_id'    : i,
                 'temperature'   : data['main']['temp']-273.15,
-                'weather'       : data['weather'][0]['description']
+                'weather'       : data['weather'][0]['description'],
+                '(DEBUG)city_name'     : city_name,                # for debug
+                '(DEBUG)lat'           : data['coord']['lat'],     # for debug
+                '(DEBUG)lon'           : data['coord']['lon']     # for debug
             })
         df = pd.DataFrame(dict)
         return(df)
@@ -98,9 +98,9 @@ class NewsData(Data):
         news_url = 'https://newsapi.org/v2/everything'
         params = {
             'q': city_name,
-            'sortBy': 'popularity',
-            'from'  : '2024-07-09',
-            'apiKey': self.API_key
+            'domains' : 'nhk.or.jp',
+            'sortBy'  : 'publishedAt',
+            'apiKey'  : self.API_key
         }
         return news_url, params
 
@@ -112,15 +112,30 @@ class NewsData(Data):
         for i, city in enumerate(cities):
             city_name = city["jp"]
             data = self._get_data(city_name)
-            
+            news_list = self.__extract_news(data, city_name)
             dict.append({
                 'city_id'       : city["city_id"],
-                'city_name'     : city_name,                # for debug
                 'news_id'       : i,
-                'news_1'        : "(TBD)NewsTitle1",
-                'news_2'        : "(TBD)NewsTitle2",
-                'news_3'        : "(TBD)NewsTitle1",
-
+                'news_1'        : news_list[0],
+                'news_2'        : news_list[1],
+                'news_3'        : news_list[2],
+                '(DEBUG)city_name'     : city_name
             })
         df = pd.DataFrame(dict)
         return(df)
+
+    def __extract_news(self, data, city_name):
+        max_news_num = 3
+        list = []
+        for elem in data["articles"]:
+            if city_name in elem["title"]:
+                abstract = f'【{elem["publishedAt"][:10]}】【{elem["source"]["name"]}】{elem["title"]}'
+                list.append(abstract)
+                if len(list) >= max_news_num:
+                    return list
+
+        for i in range(max_news_num - len(list)):
+            abstract = ""
+            list.append(abstract)
+        return list
+
