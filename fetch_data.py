@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 import requests
 import pandas as pd
 import json
+import os
 
 #________________________________________________________________________________________________________________________
 class Data(ABC):
@@ -26,7 +27,8 @@ class Data(ABC):
             except Exception as e:
                 print(f"Error fetching data: {e}")
                 return None
-        else:            
+        else:
+            self._chdir_to_json_dump()            
             with open(f"{json_file_name}.json", "r") as file:
                 data = json.load(file)
                 return data
@@ -39,8 +41,14 @@ class Data(ABC):
     # @abstractmethod
     def _get_json_file_name(self, city_name):
         return city_name
+    
+    def _chdir_to_json_dump(self):
+        path = f'{os.path.dirname(os.path.abspath(__file__))}\json_dump'
+        os.chdir(path)
+        return
 
     def _dump_to_json(self, data, filename):
+        self._chdir_to_json_dump()
         if self.is_local_mode == False:
             with open(f"{filename}.json", "w", encoding='utf-8') as file:
                 json.dump(data, file, ensure_ascii=False, indent=4, sort_keys=True)
@@ -105,16 +113,13 @@ class NewsData(Data):
             city_name = city["jp"]
             data = self._get_data(city_name)
             
-            with open(f"news_{city_name}2.json", "w", encoding='utf-8') as file:
-                json.dump(data, file, ensure_ascii=False, indent=4, sort_keys=True)
-            
             dict.append({
                 'city_id'       : city["city_id"],
                 'city_name'     : city_name,                # for debug
                 'news_id'       : i,
-                'news_1'        : "-",   # TBD
-                'news_2'        : "-",   # TBD
-                'news_3'        : "-",   # TBD
+                'news_1'        : "(TBD)NewsTitle1",
+                'news_2'        : "(TBD)NewsTitle2",
+                'news_3'        : "(TBD)NewsTitle1",
 
             })
         df = pd.DataFrame(dict)

@@ -4,7 +4,7 @@ import sqlite3
 from sqlite3 import Error
 
 # Local実行モード（サーバーからAPIでデータ取得せず，Local上のDumpからデータ取得する．API呼び出し回数を消費しないためのモード）
-IS_LOCAL_MODE = False
+IS_LOCAL_MODE = True
 
 # APIキー
 openweather_api_key = '71a673e4a77aa9bdc2e8a53467d75a82'
@@ -32,10 +32,10 @@ def main():
     print("------ debug : weather_df ------")
     print(weather_df)
 
-    # news_data = fetch_data.NewsData(news_api_key, IS_LOCAL_MODE)
-    # news_df = news_data.make_df(cities)
-    # print("------ debug : news_df ------")
-    # print(news_df)
+    news_data = fetch_data.NewsData(news_api_key, IS_LOCAL_MODE)
+    news_df = news_data.make_df(cities)
+    print("------ debug : news_df ------")
+    print(news_df)
 
     # SQLデータベースに統合
     # TBD．別の.pyファイルに分割しで計算する．

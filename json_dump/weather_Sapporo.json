@@ -1,0 +1,45 @@
+{
+    "base": "stations",
+    "clouds": {
+        "all": 75
+    },
+    "cod": 200,
+    "coord": {
+        "lat": 43.0642,
+        "lon": 141.3469
+    },
+    "dt": 1721115122,
+    "id": 2128295,
+    "main": {
+        "feels_like": 301.71,
+        "grnd_level": 1011,
+        "humidity": 69,
+        "pressure": 1014,
+        "sea_level": 1014,
+        "temp": 300.02,
+        "temp_max": 301.66,
+        "temp_min": 300.01
+    },
+    "name": "Sapporo",
+    "sys": {
+        "country": "JP",
+        "id": 7980,
+        "sunrise": 1721070567,
+        "sunset": 1721124688,
+        "type": 1
+    },
+    "timezone": 32400,
+    "visibility": 10000,
+    "weather": [
+        {
+            "description": "broken clouds",
+            "icon": "04d",
+            "id": 803,
+            "main": "Clouds"
+        }
+    ],
+    "wind": {
+        "deg": 130,
+        "speed": 8.23
+    }
+}

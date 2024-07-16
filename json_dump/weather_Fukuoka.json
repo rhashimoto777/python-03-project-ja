@@ -1,0 +1,45 @@
+{
+    "base": "stations",
+    "clouds": {
+        "all": 75
+    },
+    "cod": 200,
+    "coord": {
+        "lat": 33.6064,
+        "lon": 130.4181
+    },
+    "dt": 1721115082,
+    "id": 1863967,
+    "main": {
+        "feels_like": 309.38,
+        "grnd_level": 1013,
+        "humidity": 89,
+        "pressure": 1014,
+        "sea_level": 1014,
+        "temp": 302.38,
+        "temp_max": 304.39,
+        "temp_min": 301.1
+    },
+    "name": "Fukuoka",
+    "sys": {
+        "country": "JP",
+        "id": 7998,
+        "sunrise": 1721074770,
+        "sunset": 1721125731,
+        "type": 1
+    },
+    "timezone": 32400,
+    "visibility": 10000,
+    "weather": [
+        {
+            "description": "mist",
+            "icon": "50d",
+            "id": 701,
+            "main": "Mist"
+        }
+    ],
+    "wind": {
+        "deg": 330,
+        "speed": 5.14
+    }
+}
