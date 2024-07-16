@@ -75,5 +75,15 @@ class NewsData(Data):
             print(response.status_code)
             data = response.json()
             breakpoint()
+            
+            dict.append({
+                'city_id'       : city["city_id"],
+                'city_name'     : city_name,                # for debug
+                'news_id'       : i,
+                'news_1'        : "-",   # TBD
+                'news_2'        : "-",   # TBD
+                'news_3'        : "-",   # TBD
+
+            })
         df = pd.DataFrame(dict)
         return(df)
