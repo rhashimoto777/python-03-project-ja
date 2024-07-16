@@ -1,6 +1,22 @@
-# python-03-project-ja
+# チーム2メンバ向け：作業TIPS
+- repositoryの設定でmainブランチに直接pushできないようにしています．別ブランチを作って，PullRequestを用いてmainブランチに変更を反映してください．
+    - mainブランチに直接pushすると下記のようなエラーが出ます．
+        ```
+         ! [remote rejected] main -> main (push declined due to repository rule violations)
+         error: failed to push some refs to 'https://github.com/rhashimoto777/python-03-project-ja.git'
+        ```
+    ― 現時点ではPullRequestにreviewerからの承認が無くてもmergeできるようにしていますが，次の修了プロジェクトでは承認を必須にしようかなと思っています．
 
-## 【作成するデータ構造】
+# セットアップと実行の手順
+
+- `main.py`を実行してください．
+    - `main.py` 内の先頭に，モード選択をするコードが有ります．
+    - APIの呼び出し回数を節約するため，GitHub上のデフォルトでは`IS_LOCAL_MODE = True`にしています．これは実際にAPIを用いてデータ取得するのではなく，予め取得済みのjson dumpファイルからデータを読み込むモードです．APIを利用する場合は`False`にしてください．
+    - 対象都市を編集する場合は，`main.py`内の冒頭にて`cities`を直接編集ください．
+
+# プロジェクトにおける重要な設計とその設計理由
+
+## 【作成するデータベース】
 #### ER図（2024-07-16 18:30時点）
 ![ER図](./pic/ER_diagram.png)
 
@@ -34,7 +50,7 @@ news_2 str
 news_3 str
 ```
 
-#### データ構造の設計詳細
+#### データベースの設計詳細
 - `city_name`
     - 各都市の和名と英名を同時に扱いたいため，独立したtableにしている．
         - NewsAPIでは日本語の都市名（例：東京）で検索すると簡便で，OpenWeatherAPIは英語の都市名（例：Tokyo）で検索すると簡便であるため．
@@ -81,3 +97,11 @@ news_3 str
 - フリーライセンスで使用できるAPIの一覧はこちら：https://openweathermap.org/price
 - 当初はhistory系のAPIを用いて過去日付の天気情報を取得しようと思ったが，過去値の取得系は全て有料ライセンスが必要そうである．
 - ソース中のAPI_KEYは橋本のもの．
+
+
+# このツールまたはサービスの使い方の説明 (ユーザー向けの説明)
+
+- `main.py`を実行してください．
+    - `main.py` 内の先頭に，モード選択をするコードが有ります．
+    - APIの呼び出し回数を節約するため，GitHub上のデフォルトでは`IS_LOCAL_MODE = True`にしています．これは実際にAPIを用いてデータ取得するのではなく，予め取得済みのjson dumpファイルからデータを読み込むモードです．APIを利用する場合は`False`にしてください．
+    - 対象都市を編集する場合は，`main.py`内の冒頭にて`cities`を直接編集ください．
