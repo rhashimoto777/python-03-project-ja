@@ -1,8 +1,6 @@
-import pandas as pd
-from sqlalchemy import create_engine
-from datetime import datetime
-import os
 import sqlite3
+import os
+from datetime import datetime
 
 def save_to_sqlite(city_df, weather_df, news_df, db_name='data.db'):
     """
@@ -28,4 +26,4 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='data.db'):
         overview_df = overview_df.merge(news_df[['city_id', 'news_id']], on='city_id')
         overview_df.to_sql('city_overview', sqlite_connection, if_exists='replace', index=False)
 
-    # sqlite_connection.close()
+    return
