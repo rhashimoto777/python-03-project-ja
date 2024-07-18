@@ -1,6 +1,10 @@
 import fetch_data
 import pandas as pd
 import sqlite3
+from sqlalchemy import create_engine
+from datetime import datetime
+from save_to_sqlite import save_to_sqlite
+from display_data import display_data
 
 #________________________________________________________________________________________________________________________
 # Local実行モード（サーバーからAPIでデータ取得せず，Local上のDumpからデータ取得する．API呼び出し回数を消費しないためのモード）
@@ -31,7 +35,6 @@ def add_city_id():
     for i, elem in enumerate(cities):
         elem["city_id"] = i
     return
-    
 def main():
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
     # 【1】データを取得し，DataFrameに変換
@@ -54,15 +57,14 @@ def main():
         news_data.print_df_for_debug(news_df)
 
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
-    # 【2】SQLデータベースに統合
+    # 【2】SQLiteデータベースに統合
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
-    # TBD．別の.pyファイルに分割しで計算する．
-    # 長越さん
+    save_to_sqlite(city_df, weather_df, news_df)
 
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
     # 【3】表示
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
-    # TBD．別の.pyファイルに分割しで計算する．
+    display_data()
 
 #________________________________________________________________________________________________________________________
 if __name__ == "__main__":
