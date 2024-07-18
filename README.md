@@ -17,7 +17,7 @@
 # プロジェクトにおける重要な設計とその設計理由
 
 ## 【作成するデータベース】
-#### ER図（2024-07-16 18:30時点）
+#### ER図
 ![ER図](./pic/ER_diagram.png)
 
 上図のテキスト版はこちら：https://databasediagram.com/app
@@ -25,26 +25,27 @@
 ```
 city_overview
 -
+overview_id int PK
 date datetime64
-city_id int PK
-weather_id int PK
-news_id int PK
+city_id int FK > city_name.city_id
+weather_id int FK > weather_current.weather_id
+news_id int FK > news_latest.news_id
 
 city_name
 -
-city_id int FK > city_overview.city_id
+city_id int PK
 jp_name str
 en_name int
 
 weather_current
 -
-weather_id int FK > city_overview.weather_id
+weather_id int PK
 weather str
 temparature int
 
 news_latest
 -
-news_id int FK > city_overview.news_id
+news_id int PK
 news_1 str
 news_2 str
 news_3 str
