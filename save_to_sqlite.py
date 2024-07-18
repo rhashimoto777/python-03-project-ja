@@ -16,6 +16,12 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
         
         # 外部キー制約を有効にする
         cursor.execute('PRAGMA foreign_keys = ON;')
+                
+        # 既存のテーブルを削除する
+        cursor.execute('DROP TABLE IF EXISTS city_overview')
+        cursor.execute('DROP TABLE IF EXISTS city_name')
+        cursor.execute('DROP TABLE IF EXISTS weather_current')
+        cursor.execute('DROP TABLE IF EXISTS news_latest')
 
         # テーブルの作成（外部キー制約付き）
         cursor.execute('''
@@ -64,7 +70,6 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
         cursor.execute('DELETE FROM city_name')
         cursor.execute('DELETE FROM weather_current')
         cursor.execute('DELETE FROM news_latest')
-
 
         # データの挿入
         city_df[['city_id', 'jp', 'en']].rename(columns={'jp': 'jp_name', 'en': 'en_name'}).to_sql('city_name', sqlite_connection, if_exists='append', index=False)
