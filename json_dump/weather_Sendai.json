@@ -1,0 +1,45 @@
+{
+    "base": "stations",
+    "clouds": {
+        "all": 75
+    },
+    "cod": 200,
+    "coord": {
+        "lat": 38.2689,
+        "lon": 140.8719
+    },
+    "dt": 1721366820,
+    "id": 2111149,
+    "main": {
+        "feels_like": 299.81,
+        "grnd_level": 1003,
+        "humidity": 83,
+        "pressure": 1009,
+        "sea_level": 1009,
+        "temp": 299.81,
+        "temp_max": 303.46,
+        "temp_min": 299.81
+    },
+    "name": "Sendai",
+    "sys": {
+        "country": "JP",
+        "id": 8043,
+        "sunrise": 1721330877,
+        "sunset": 1721383036,
+        "type": 1
+    },
+    "timezone": 32400,
+    "visibility": 10000,
+    "weather": [
+        {
+            "description": "broken clouds",
+            "icon": "04d",
+            "id": 803,
+            "main": "Clouds"
+        }
+    ],
+    "wind": {
+        "deg": 120,
+        "speed": 3.09
+    }
+}

@@ -1,35 +1,35 @@
 {
     "base": "stations",
     "clouds": {
-        "all": 96
+        "all": 95
     },
     "cod": 200,
     "coord": {
         "lat": 35.0211,
         "lon": 135.7538
     },
-    "dt": 1721115272,
+    "dt": 1721366902,
     "id": 1857910,
     "main": {
-        "feels_like": 308.48,
-        "grnd_level": 1007,
-        "humidity": 71,
-        "pressure": 1013,
-        "sea_level": 1013,
-        "temp": 303.17,
-        "temp_max": 304.63,
-        "temp_min": 301.71
+        "feels_like": 315.61,
+        "grnd_level": 1004,
+        "humidity": 54,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "temp": 308.61,
+        "temp_max": 309.07,
+        "temp_min": 306.86
     },
     "name": "Kyoto",
     "sys": {
         "country": "JP",
         "id": 265569,
-        "sunrise": 1721073281,
-        "sunset": 1721124659,
+        "sunrise": 1721332602,
+        "sunset": 1721383768,
         "type": 2
     },
     "timezone": 32400,
-    "visibility": 7098,
+    "visibility": 10000,
     "weather": [
         {
             "description": "overcast clouds",
@@ -39,8 +39,8 @@
         }
     ],
     "wind": {
-        "deg": 278,
-        "gust": 4.02,
-        "speed": 3.13
+        "deg": 206,
+        "gust": 5.36,
+        "speed": 4.47
     }
 }

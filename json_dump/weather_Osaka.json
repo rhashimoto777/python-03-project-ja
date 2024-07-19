@@ -1,45 +1,45 @@
 {
     "base": "stations",
     "clouds": {
-        "all": 75
+        "all": 40
     },
     "cod": 200,
     "coord": {
         "lat": 34.6937,
         "lon": 135.5022
     },
-    "dt": 1721115043,
+    "dt": 1721366892,
     "id": 1853909,
     "main": {
-        "feels_like": 307.11,
-        "grnd_level": 1011,
-        "humidity": 61,
-        "pressure": 1013,
-        "sea_level": 1013,
-        "temp": 303.61,
-        "temp_max": 304.85,
-        "temp_min": 301.61
+        "feels_like": 313.35,
+        "grnd_level": 1008,
+        "humidity": 49,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "temp": 308.11,
+        "temp_max": 309.55,
+        "temp_min": 306.07
     },
     "name": "Osaka",
     "sys": {
         "country": "JP",
         "id": 2029209,
-        "sunrise": 1721073390,
-        "sunset": 1721124670,
+        "sunrise": 1721332710,
+        "sunset": 1721383781,
         "type": 2
     },
     "timezone": 32400,
     "visibility": 10000,
     "weather": [
         {
-            "description": "broken clouds",
-            "icon": "04d",
-            "id": 803,
+            "description": "scattered clouds",
+            "icon": "03d",
+            "id": 802,
             "main": "Clouds"
         }
     ],
     "wind": {
-        "deg": 230,
-        "speed": 3.6
+        "deg": 250,
+        "speed": 6.17
     }
 }

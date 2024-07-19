@@ -8,47 +8,38 @@
         "lat": 35.6895,
         "lon": 139.6917
     },
-    "dt": 1721115247,
+    "dt": 1721366677,
     "id": 1850144,
     "main": {
-        "feels_like": 298.3,
-        "grnd_level": 1010,
-        "humidity": 92,
-        "pressure": 1015,
-        "sea_level": 1015,
-        "temp": 297.42,
-        "temp_max": 298.03,
-        "temp_min": 296.29
+        "feels_like": 314.46,
+        "grnd_level": 1002,
+        "humidity": 59,
+        "pressure": 1007,
+        "sea_level": 1007,
+        "temp": 307.46,
+        "temp_max": 309.15,
+        "temp_min": 305.94
     },
     "name": "Tokyo",
-    "rain": {
-        "1h": 6.48
-    },
     "sys": {
         "country": "JP",
-        "id": 268395,
-        "sunrise": 1721072235,
-        "sunset": 1721123815,
+        "id": 2001249,
+        "sunrise": 1721331558,
+        "sunset": 1721382921,
         "type": 2
     },
     "timezone": 32400,
-    "visibility": 3000,
+    "visibility": 10000,
     "weather": [
         {
-            "description": "light intensity shower rain",
-            "icon": "09d",
-            "id": 520,
-            "main": "Rain"
-        },
-        {
-            "description": "mist",
-            "icon": "50d",
-            "id": 701,
-            "main": "Mist"
+            "description": "broken clouds",
+            "icon": "04d",
+            "id": 803,
+            "main": "Clouds"
         }
     ],
     "wind": {
-        "deg": 90,
-        "speed": 5.14
+        "deg": 170,
+        "speed": 6.69
     }
 }
