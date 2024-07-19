@@ -1,0 +1,49 @@
+{
+    "base": "stations",
+    "clouds": {
+        "all": 100
+    },
+    "cod": 200,
+    "coord": {
+        "lat": 35.1802,
+        "lon": 136.9066
+    },
+    "dt": 1721366713,
+    "id": 1865694,
+    "main": {
+        "feels_like": 315.03,
+        "grnd_level": 1007,
+        "humidity": 59,
+        "pressure": 1009,
+        "sea_level": 1009,
+        "temp": 308.03,
+        "temp_max": 309.25,
+        "temp_min": 305.02
+    },
+    "name": "Aichi",
+    "rain": {
+        "1h": 0.21
+    },
+    "sys": {
+        "country": "JP",
+        "id": 2001167,
+        "sunrise": 1721332302,
+        "sunset": 1721383514,
+        "type": 2
+    },
+    "timezone": 32400,
+    "visibility": 10000,
+    "weather": [
+        {
+            "description": "light rain",
+            "icon": "10d",
+            "id": 500,
+            "main": "Rain"
+        }
+    ],
+    "wind": {
+        "deg": 158,
+        "gust": 4.02,
+        "speed": 0.45
+    }
+}

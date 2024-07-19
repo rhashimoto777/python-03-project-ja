@@ -1,14 +1,11 @@
 import get_data
 import pandas as pd
-import sqlite3
-from sqlalchemy import create_engine
-from datetime import datetime
 from save_to_sqlite import save_to_sqlite
 from display_data import display_data
 
 #________________________________________________________________________________________________________________________
-# Local実行モード（サーバーからAPIでデータ取得せず，Local上のDumpからデータ取得する．API呼び出し回数を消費しないためのモード）
-IS_LOCAL_MODE = True
+# Local実行モード（サーバーからAPIでデータ取得せず、Local上のDumpからデータ取得する．API呼び出し回数を消費しないためのモード）
+IS_LOCAL_MODE = False
 # デバッグ用のprintを表示するモード
 IS_DEBUG_PRINT_MODE = True
 
@@ -24,6 +21,8 @@ cities.append({"jp":"東京", "en":"Tokyo"})
 cities.append({"jp":"京都", "en":"Kyoto"})
 cities.append({"jp":"大阪", "en":"Osaka"})
 cities.append({"jp":"福岡", "en":"Fukuoka"})
+cities.append({"jp":"愛知", "en":"Aichi"})
+cities.append({"jp":"仙台", "en":"Sendai"})
 cities.append({"jp":"札幌", "en":"Sapporo"})
 
 #________________________________________________________________________________________________________________________
@@ -43,7 +42,7 @@ def print_city_df(city_df):
 
 def main():
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
-    # 【1】データを取得し，DataFrameに変換
+    # 【1】データを取得し、DataFrameに変換
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
 
     # 「city_name」に相当するDataFrame
@@ -74,6 +73,7 @@ def main():
         return
     if IS_DEBUG_PRINT_MODE:
         print("\n######################## debug : Save to SQLite DB ########################\n Success")
+    
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 
     # 【3】表示
     # \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ \__ 

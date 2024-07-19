@@ -2,6 +2,136 @@
     "articles": [
         {
             "author": null,
+            "content": "",
+            "description": "今月7日に投票が行われた東京都知事選挙で選挙ポスターをめぐる問題が相次いだことを受けて、鳥取県の平井知事は、選挙目的以外の掲示板の利用が認められていないことを明確にして、営利目的などのポスターの掲示を撤去させたりできるよう、県独自の条例制定を検討する考えを示しました。",
+            "publishedAt": "2024-07-18T04:36:08Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "鳥取県知事 選挙ポスター問題受け県独自の条例制定検討へ",
+            "url": "https://www3.nhk.or.jp/news/html/20240718/k10014514931000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240718/K10014514931_2407181322_0718132459_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "36321855\r\n5",
+            "description": "「京都アニメーション」のスタジオが放火され、社員36人が亡くなり、32人が重軽傷を負った事件から18日で5年となり、現場のスタジオ跡地では追悼式が開かれます。遺族からは「5年たっても悲しみは変わらない」などといった声が聞かれます。",
+            "publishedAt": "2024-07-17T21:15:44Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "京アニ放火事件から5年 現場のスタジオ跡地では追悼式",
+            "url": "https://www3.nhk.or.jp/news/html/20240718/k10014514511000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240718/K10014514511_2407172137_0718061545_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "20\r\n1",
+            "description": "緻密な絵と動きのアニメを制作し、世界中のファンに愛されてきた京都アニメーション。 その作画を屋台骨として支えてきたのが、ベテランアニメーターの木上益治さん（享年61）でした。 若手の頃から頭角をあらわし、「AKIRA」や「火垂るの墓」のスタッフに起用されるなど、日本のアニメ史に刻まれる数々の名作に携わって...",
+            "publishedAt": "2024-07-17T17:51:53Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "京アニ放火事件 あなたの描いた「勇気」をたどって | NHK | WEB特集",
+            "url": "https://www3.nhk.or.jp/news/html/20240717/k10014513631000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240717/K10014513631_2407171052_0717153457_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "中国から沖縄への観光客の回復を目指して中国の首都・北京で17日、沖縄の魅力を紹介するイベントが開かれました。",
+            "publishedAt": "2024-07-17T14:34:27Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "中国からの観光客 回復目指し 北京で沖縄の魅力を紹介",
+            "url": "https://www3.nhk.or.jp/news/html/20240717/k10014514551000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240717/K10014514551_2407172306_0717233429_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "17日午後、京都市北区の賀茂川で、友人と水遊びをしていた男子高校生が流され、警察によりますと意識不明の重体だということです。",
+            "publishedAt": "2024-07-17T09:49:45Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "京都 賀茂川 友人と水遊びの男子高校生流され意識不明の重体",
+            "url": "https://www3.nhk.or.jp/news/html/20240717/k10014514171000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240717/K10014514171_2407171806_0717184947_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "京都の夏を彩る祇園祭の最大の見どころ、前祭（さきまつり）の「山鉾巡行（やまほこ）」が行われ、豪華な装飾を施した山や鉾が都大路を進んでいます。",
+            "publishedAt": "2024-07-17T03:06:31Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "京都 祇園祭 最大の見どころ「山鉾巡行」が始まる",
+            "url": "https://www3.nhk.or.jp/news/html/20240717/k10014513751000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240717/K10014513751_2407171149_0717115519_01_03.jpg"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "サッカーの日本代表としてことしのアジアカップに出場した佐野海舟選手が、東京都内のホテルで女性に性的暴行をした疑いで警視庁に逮捕されました。",
+            "publishedAt": "2024-07-16T23:30:13Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "サッカー日本代表 佐野海舟容疑者 女性への性的暴行の疑い逮捕",
+            "url": "https://www3.nhk.or.jp/news/html/20240717/k10014513591000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/parts16/images/common/noimg_default_l.png"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "16日午後、東京・大田区の都立高校で、市販されている激辛のポテトチップスを食べた多数の生徒が体調不良を訴え、14人が病院に搬送されました。生徒たちは口や胃の痛みを訴えましたが、いずれも軽症だということです。",
+            "publishedAt": "2024-07-16T09:09:00Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "激辛ポテトチップス食べた高校生14人 病院に搬送 口や胃の痛み",
+            "url": "https://www3.nhk.or.jp/news/html/20240716/k10014513181000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240716/K10014513181_2407161758_0716180901_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "",
+            "description": "真言宗を開いた空海が拠点とした京都の神護寺に伝わる彫刻や絵画などを集めた特別展が、17日から東京 上野の東京国立博物館で始まるのを前に、16日、内覧会が開かれました。",
+            "publishedAt": "2024-07-16T06:58:17Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "空海が拠点とした神護寺に伝わる名品の特別展 あすから 上野",
+            "url": "https://www3.nhk.or.jp/news/html/20240716/k10014512951000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240716/K10014512951_2407161505_0716151222_01_02.jpg"
+        },
+        {
+            "author": null,
+            "content": "2",
+            "description": "自民党の萩生田・前政務調査会長は、今月行われた東京都議会議員の補欠選挙で党が2議席の獲得にとどまったことを受けて、東京都連の会長を辞任する意向を明らかにしました。",
+            "publishedAt": "2024-07-16T04:31:36Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "自民 萩生田 前政務調査会長 都連会長辞任の意向 都議補選受け",
+            "url": "https://www3.nhk.or.jp/news/html/20240716/k10014512841000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240716/K10014512841_2407161320_0716133138_01_02.jpg"
+        },
+        {
+            "author": null,
             "content": "3614\r\n49",
             "description": "「京都アニメーション」のスタジオが放火され、社員36人が死亡した事件で、会社の本社がある京都府宇治市の公園に、事件を伝える碑が完成し、14日に遺族などが参加して式典が開かれました。",
             "publishedAt": "2024-07-14T04:05:29Z",
@@ -1169,138 +1299,8 @@
             "title": "選挙ポスターに全裸に近い女性の画像 警視庁が候補者に警告",
             "url": "https://www3.nhk.or.jp/news/html/20240621/k10014487511000.html",
             "urlToImage": "https://www3.nhk.or.jp/news/html/20240621/K10014487511_2406202340_0621052349_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "川崎市は、市内にある生田緑地の旧ツイッター「X」の公式アカウントから、20日告示された東京都知事選挙の候補者に関する不適切な投稿があったと発表しました。",
-            "publishedAt": "2024-06-20T11:10:04Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "川崎市“生田緑地 公式Xで都知事選候補者に関する不適切投稿”",
-            "url": "https://www3.nhk.or.jp/news/html/20240620/k10014487271000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240620/K10014487271_2406201937_0620201006_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "56\r\n4849",
-            "description": "今回の東京都知事選挙は過去最多の立候補者数となりました。",
-            "publishedAt": "2024-06-20T09:22:51Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "都知事選 掲示板が足りない…クリアファイルで貼る異例の対応",
-            "url": "https://www3.nhk.or.jp/news/html/20240620/k10014486751000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240620/K10014486751_2406201307_0620131618_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "2056",
-            "description": "20日に告示された東京都知事選挙に、これまでで最も多い56人が立候補しました。",
-            "publishedAt": "2024-06-20T08:12:25Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "【速報】都知事選に過去最多の56人立候補",
-            "url": "https://www3.nhk.or.jp/news/html/20240620/k10014487031000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240620/K10014487031_2406201711_0620171123_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "東京都は、主に幼い子どもが感染し、手足や口に発疹ができる「手足口病」の患者数が基準を上回ったとして、警報を発表することとなりました。都が警報を出すのは2年前の2022年以来で、こまめな手洗いなどの感染対策を呼びかけることにしています。",
-            "publishedAt": "2024-06-20T06:22:02Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "手足口病 患者数が基準上回り 東京都が警報発表へ 感染対策を",
-            "url": "https://www3.nhk.or.jp/news/html/20240620/k10014486851000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240620/K10014486851_2406201509_0620152203_01_03.jpg"
-        },
-        {
-            "author": null,
-            "content": "3647467137149417975685296AI3373AI5150414357456275566731",
-            "description": "任期満了に伴う東京都知事選挙がきょう告示されました。小池知事の都政運営への評価が最大の争点となる見通しで、7月7日の投票日に向けて17日間の選挙戦がスタートしました。東京都知事選挙に立候補を届け出たのは午前11時までに25人で、過去最多だった前回・4年前の22人をすでに上回りました。",
-            "publishedAt": "2024-06-20T02:46:13Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "東京都知事選挙 告示 立候補者は過去最多 午前11時で25人",
-            "url": "https://www3.nhk.or.jp/news/html/20240620/k10014486541000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240620/K10014486541_2406201016_0620111412_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "自民党の菅前総理大臣と茂木幹事長が19日夜会食し、岸田総理大臣の政権運営や党内情勢をめぐって意見を交わしたものとみられます。自民党の菅前総理大臣と茂木幹事長は、19日夜、東京都内のステーキ店で2時間余り会食しました。",
-            "publishedAt": "2024-06-19T14:09:43Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "自民 菅前首相と茂木幹事長が会食 政権運営などで意見交換か",
-            "url": "https://www3.nhk.or.jp/news/html/20240619/k10014486381000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014486381_2406192307_0619230822_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "2050\r\n37156417375\r\nAI3351483149AI50\r\n594379477465\r\n437049554562\r\n506241493652\r\n4745756168\r\n4995673253\r\n3643415758\r\n7733573846\r\n3942534646",
-            "description": "任期満了に伴う東京都知事選挙が20日、告示されます。小池知事の都政運営への評価が最大の争点となる見通しで、立候補者数は過去最多となり、50人を超える可能性があります。",
-            "publishedAt": "2024-06-19T11:23:09Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "東京都知事選挙 あす告示 立候補者数は過去最多50人超の可能性",
-            "url": "https://www3.nhk.or.jp/news/html/20240619/k10014485991000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014485991_2406191839_0619193932_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "京都市にある知恩院の国宝の三門の柱にひっかいたような傷がつけられているのが見つかり、警察は文化財保護法違反の疑いで捜査しています。",
-            "publishedAt": "2024-06-19T11:10:01Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "京都 知恩院 国宝の三門の柱に傷 文化財保護法違反疑いで捜査",
-            "url": "https://www3.nhk.or.jp/news/html/20240619/k10014486101000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014486101_2406191943_0619195951_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "204\r\n194\r\n3.028164901\r\n6000\r\n62077",
-            "description": "東京都知事選挙が20日に告示されるのを前に、立候補を予定している4人が共同記者会見に参加し、それぞれ重点として掲げる政策を訴えました。",
-            "publishedAt": "2024-06-19T09:36:43Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "東京都知事選 立候補予定者4人が共同記者会見 重点政策を訴え",
-            "url": "https://www3.nhk.or.jp/news/html/20240619/k10014485651000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014485651_2406191728_0619175143_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "道路の舗装工事大手の「NIPPO」が、国道や高速道路の工事で、契約と異なり使用済みのアスファルトを加工し再生した材料を使用していた問題で、新たに東京都の3件の工事でも契約と異なる材料を使用していたことが会社の調査で分かりました。",
-            "publishedAt": "2024-06-19T09:13:41Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "NIPPO 東京都の3件の工事でも契約と異なる材料使用",
-            "url": "https://www3.nhk.or.jp/news/html/20240619/k10014485911000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014485911_2406191759_0619181343_01_02.jpg"
         }
     ],
     "status": "ok",
-    "totalResults": 107
+    "totalResults": 113
 }

@@ -76,7 +76,7 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
         news_df[['news_id', 'news_1', 'news_2', 'news_3']].to_sql('news_latest', conn, if_exists='append', index=False)
 
         overview_df = city_df[['city_id']].copy()
-        overview_df['overview_id'] = overview_df[['city_id']] # 現実装においてはoverview_idとcity_idは一致する
+        overview_df['overview_id'] = overview_df[['city_id']]+1 # 1から始まるようにするために+1する
         overview_df['date'] = datetime.now()
         overview_df = overview_df.merge(weather_df[['weather_id']], left_index=True, right_index=True)
         overview_df = overview_df.merge(news_df[['news_id']], left_index=True, right_index=True)

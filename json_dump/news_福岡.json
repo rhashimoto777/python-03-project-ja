@@ -2,6 +2,19 @@
     "articles": [
         {
             "author": null,
+            "content": "SKY PREMIUMINTERNATIONAL456046\r\n16\r\n35500\r\n31002000163500",
+            "description": "日本で投資の勧誘をしていたシンガポールの会社の幹部4人が無登録で投資に関する業務をしていたとして、金融商品取引法違反の罪に問われた裁判で、福岡地方裁判所は4人に対しいずれも執行猶予のついた有罪判決を言い渡しました。",
+            "publishedAt": "2024-07-16T06:23:28Z",
+            "source": {
+                "id": null,
+                "name": "Nhk.or.jp"
+            },
+            "title": "無登録で投資業務 シンガポールの会社幹部に有罪判決 福岡地裁",
+            "url": "https://www3.nhk.or.jp/news/html/20240716/k10014512931000.html",
+            "urlToImage": "https://www3.nhk.or.jp/news/html/20240716/K10014512931_2407161503_0716152330_01_02.jpg"
+        },
+        {
+            "author": null,
             "content": "",
             "description": "福岡県宗像市は大雨のおそれがあるとして14日午前11時21分、市内の東郷一丁目の5900世帯1万2200人に「高齢者等避難」の情報を出しました。「高齢者等避難」は5段階の大雨警戒レベルのうちレベル3の情報で、市は高齢者や体の不自由な人などに避難を始めるよう呼びかけています。",
             "publishedAt": "2024-07-14T02:45:41Z",
@@ -311,47 +324,8 @@
             "title": "保護司殺害事件受け 不安抱えていないか聞き取り 北九州",
             "url": "https://www3.nhk.or.jp/news/html/20240619/k10014485571000.html",
             "urlToImage": "https://www3.nhk.or.jp/news/html/20240619/K10014485571_2406191402_0619140631_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "AI",
-            "description": "福岡県北九州市は、各区役所の窓口にAIを活用した音声認識システムを導入し、筆談が必要な人に対して職員の発言を字幕で表示するサービスの実証実験を始めました。",
-            "publishedAt": "2024-06-17T20:44:42Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "“窓口職員の説明を字幕に”北九州市の区役所でAI使い実証実験",
-            "url": "https://www3.nhk.or.jp/news/html/20240618/k10014483351000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240618/K10014483351_2406171525_0617152846_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "1JR\r\n32138",
-            "description": "去年1月、JR博多駅近くの路上で元交際相手の女性を殺害したなどとして、殺人などの罪に問われている被告の初公判が福岡地方裁判所で開かれ、被告は殺人と銃刀法違反の罪については起訴された内容を認めた一方、ストーカー規制法違反については「待ち伏せしたことは違います」と述べ、無罪を主張しました。",
-            "publishedAt": "2024-06-17T03:26:00Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "博多 女性殺害事件の初公判 ストーカー規制法違反では無罪主張",
-            "url": "https://www3.nhk.or.jp/news/html/20240617/k10014483271000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240617/K10014483271_2406171207_0617122418_01_02.jpg"
-        },
-        {
-            "author": null,
-            "content": "",
-            "description": "プロ野球、阪神の主力ショートの木浪聖也選手が15日福岡市で行われたソフトバンク戦で背中付近にデッドボールを受け「左の肩甲骨」の骨折と診断され16日、1軍の出場選手登録を抹消されました。",
-            "publishedAt": "2024-06-16T06:16:05Z",
-            "source": {
-                "id": null,
-                "name": "Nhk.or.jp"
-            },
-            "title": "阪神 木浪聖也 死球受け「左の肩甲骨」骨折と診断 1軍登録抹消",
-            "url": "https://www3.nhk.or.jp/news/html/20240616/k10014482611000.html",
-            "urlToImage": "https://www3.nhk.or.jp/news/html/20240616/K10014482611_2406161432_0616151606_01_02.jpg"
         }
     ],
     "status": "ok",
-    "totalResults": 27
+    "totalResults": 25
 }
