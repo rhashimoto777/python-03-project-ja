@@ -89,25 +89,26 @@ class WeatherData(Data):
             city_name = city["en"]
             data = self._get_data(city_name)
 
-            # データのnull値対応は、DataFrame変換後ではなくこの時点で行う。
-            # tempはnullだと摂氏に変換できないので、nullの場合は特殊処理を行う。
-            # weatherはnull (= Python上だとNone) のときはそのまま表示するため何もしない。
-            temp_k = data['main']['temp']
-            if temp_k:
-                temp_celc = temp_k - 273.15
-            else:
-                temp_celc = None
+            if data:
+                # データのnull値対応は、DataFrame変換後ではなくこの時点で行う。
+                # tempはnullだと摂氏に変換できないので、nullの場合は特殊処理を行う。
+                # weatherはnull (= Python上だとNone) のときはそのまま表示するため何もしない。
+                temp_k = data['main']['temp']
+                if temp_k:
+                    temp_celc = temp_k - 273.15
+                else:
+                    temp_celc = None
 
-            # dictに値を格納する
-            dict.append({
-                'city_id'     : city["city_id"],
-                'weather_id'  : i,
-                'temperature' : temp_celc,
-                'weather'     : data['weather'][0]['description'],
-                '(DEBUG)city_name' : city_name,               # for debug
-                '(DEBUG)lat'       : data['coord']['lat'],    # for debug
-                '(DEBUG)lon'       : data['coord']['lon']     # for debug
-            })
+                # dictに値を格納する
+                dict.append({
+                    'city_id'     : city["city_id"],
+                    'weather_id'  : i,
+                    'temperature' : temp_celc,
+                    'weather'     : data['weather'][0]['description'],
+                    '(DEBUG)city_name' : city_name,               # for debug
+                    '(DEBUG)lat'       : data['coord']['lat'],    # for debug
+                    '(DEBUG)lon'       : data['coord']['lon']     # for debug
+                })
         df = pd.DataFrame(dict)
         return(df)
 
@@ -165,18 +166,19 @@ class NewsData(Data):
             city_name = city["jp"]
             data = self._get_data(city_name)
 
-            # ニュースを選別する。データのクリーニングはこの中で行う。
-            news_list = self.__extract_news(data, city_name)
+            if data:
+                # ニュースを選別する。データのクリーニングはこの中で行う。
+                news_list = self.__extract_news(data, city_name)
 
-            # dictに値を追加
-            dict.append({
-                'city_id' : city["city_id"],
-                'news_id' : i,
-                'news_1'  : news_list[0],
-                'news_2'  : news_list[1],
-                'news_3'  : news_list[2],
-                '(DEBUG)city_name' : city_name
-            })
+                # dictに値を追加
+                dict.append({
+                    'city_id' : city["city_id"],
+                    'news_id' : i,
+                    'news_1'  : news_list[0],
+                    'news_2'  : news_list[1],
+                    'news_3'  : news_list[2],
+                    '(DEBUG)city_name' : city_name
+                })
         df = pd.DataFrame(dict)
         return(df)
 
