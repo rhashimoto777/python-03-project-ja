@@ -5,9 +5,20 @@
          ! [remote rejected] main -> main (push declined due to repository rule violations)
          error: failed to push some refs to 'https://github.com/rhashimoto777/python-03-project-ja.git'
         ```
-    ― 現時点ではPullRequestにreviewerからの承認が無くてもmergeできるようにしていますが，次の修了プロジェクトでは承認を必須にしようかなと思っています．
+    - 現時点ではPullRequestにreviewerからの承認が無くてもmergeできるようにしていますが，次の修了プロジェクトでは承認を必須にしようかなと思っています．
 
 # セットアップと実行の手順
+
+- 下記のライブラリを使用します．未導入のものがある場合は導入してください．
+    ```
+    requests
+    datetime
+    sqlite3
+    pandas
+    json
+    abc
+    os
+    ```
 
 - `main.py`を実行してください．
     - `main.py` 内の先頭に，モード選択をするコードが有ります．
