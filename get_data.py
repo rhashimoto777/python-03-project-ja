@@ -11,9 +11,14 @@ class Data(ABC):
         self.is_local_mode = is_local_mode
 
     def _get_data(self, city_name):
+        """
+        APIもしくはLocalのjsonからデータを取得し、dictを返す。
+        """
+        # 前処理
         json_file_name = self._get_json_file_name(city_name)
 
         if self.is_local_mode == False:
+            # APIからデータを読み込み、読み込んだデータをjsonに保存しておく。
             endpoint, params = self._get_endpoint_and_params(city_name)
             try:
                 response = requests.get(endpoint, params)
@@ -28,6 +33,7 @@ class Data(ABC):
                 print(f"Error fetching data: {e}")
                 return None
         else:
+            # jsonからデータを読み込む
             self._chdir_to_json_dump()            
             with open(f"{json_file_name}.json", "r", encoding='utf-8') as file:
                 data = json.load(file)
@@ -79,15 +85,27 @@ class WeatherData(Data):
     def make_df(self, cities):
         dict = []
         for i, city in enumerate(cities):
+            # データを取得する
             city_name = city["en"]
             data = self._get_data(city_name)
+
+            # データのnull値対応は、DataFrame変換後ではなくこの時点で行う。
+            # tempはnullだと摂氏に変換できないので、nullの場合は特殊処理を行う。
+            # weatherはnull (= Python上だとNone) のときはそのまま表示するため何もしない。
+            temp_k = data['main']['temp']
+            if temp_k:
+                temp_celc = temp_k - 273.15
+            else:
+                temp_celc = None
+
+            # dictに値を格納する
             dict.append({
                 'city_id'     : city["city_id"],
                 'weather_id'  : i,
-                'temperature' : data['main']['temp']-273.15,
+                'temperature' : temp_celc,
                 'weather'     : data['weather'][0]['description'],
-                '(DEBUG)city_name' : city_name,                # for debug
-                '(DEBUG)lat'       : data['coord']['lat'],     # for debug
+                '(DEBUG)city_name' : city_name,               # for debug
+                '(DEBUG)lat'       : data['coord']['lat'],    # for debug
                 '(DEBUG)lon'       : data['coord']['lon']     # for debug
             })
         df = pd.DataFrame(dict)
@@ -107,7 +125,7 @@ class NewsData(Data):
         news_url = 'https://newsapi.org/v2/everything'
         params = {
             'q': city_name,
-            'domains' : 'nhk.or.jp', # 対象記事はNHKに限定する．
+            'domains' : 'nhk.or.jp', # 対象記事はNHKに限定する
             'sortBy'  : 'publishedAt',
             'apiKey'  : self.API_key
         }
@@ -117,16 +135,24 @@ class NewsData(Data):
         return f'news_{city_name}'
 
     def __extract_news(self, data, city_name):
+        """
+        cityに関連するニュースを抽出し、抽出結果を全て返す。
+        """
         max_news_num = 3
         list = []
         for elem in data["articles"]:
-            if city_name in elem["title"]:
-                abstract = f'【{elem["publishedAt"][:10]}】{elem["title"]}'
+            pub_date = elem["publishedAt"][:10]
+            source_name = elem["source"]["name"]
+            title = elem["title"]
+
+            # 各データがnullではなく、かつtitleに都市名が入っているときのみニュースを抽出する。
+            if title and (city_name in title) and pub_date and len(pub_date) == 10 and source_name:
+                abstract = f'【{pub_date}】【{source_name}】{title}'
                 list.append(abstract)
                 if len(list) >= max_news_num:
                     return list
 
-        # もしも十分数記事が取得できなかった場合に，配列外アクセスを防ぐために空の要素を加える
+        # もしも十分数記事が取得できなかった場合に、配列外アクセスを防ぐために空の要素を加える
         for i in range(max_news_num - len(list)):
             abstract = ""
             list.append(abstract)
@@ -135,9 +161,14 @@ class NewsData(Data):
     def make_df(self, cities):
         dict = []
         for i, city in enumerate(cities):
+            # データを取得する
             city_name = city["jp"]
             data = self._get_data(city_name)
+
+            # ニュースを選別する。データのクリーニングはこの中で行う。
             news_list = self.__extract_news(data, city_name)
+
+            # dictに値を追加
             dict.append({
                 'city_id' : city["city_id"],
                 'news_id' : i,
