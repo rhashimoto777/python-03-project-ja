@@ -1,7 +1,6 @@
 import sqlite3
 import os
 from datetime import datetime
-import pandas as pd
 
 def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
     """
@@ -11,8 +10,8 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
     os.makedirs(path, exist_ok=True)
     os.chdir(path)
 
-    with sqlite3.connect(db_name) as sqlite_connection:
-        cursor = sqlite_connection.cursor()
+    with sqlite3.connect(db_name) as conn:
+        cursor = conn.cursor()
         
         # 外部キー制約を有効にする
         cursor.execute('PRAGMA foreign_keys = ON;')
@@ -72,16 +71,16 @@ def save_to_sqlite(city_df, weather_df, news_df, db_name='city_overview.db'):
         cursor.execute('DELETE FROM news_latest')
 
         # データの挿入
-        city_df[['city_id', 'jp', 'en']].rename(columns={'jp': 'jp_name', 'en': 'en_name'}).to_sql('city_name', sqlite_connection, if_exists='append', index=False)
-        weather_df[['weather_id', 'weather', 'temperature']].to_sql('weather_current', sqlite_connection, if_exists='append', index=False)
-        news_df[['news_id', 'news_1', 'news_2', 'news_3']].to_sql('news_latest', sqlite_connection, if_exists='append', index=False)
+        city_df[['city_id', 'jp', 'en']].rename(columns={'jp': 'jp_name', 'en': 'en_name'}).to_sql('city_name', conn, if_exists='append', index=False)
+        weather_df[['weather_id', 'weather', 'temperature']].to_sql('weather_current', conn, if_exists='append', index=False)
+        news_df[['news_id', 'news_1', 'news_2', 'news_3']].to_sql('news_latest', conn, if_exists='append', index=False)
 
         overview_df = city_df[['city_id']].copy()
         overview_df['overview_id'] = overview_df[['city_id']] # 現実装においてはoverview_idとcity_idは一致する
         overview_df['date'] = datetime.now()
         overview_df = overview_df.merge(weather_df[['weather_id']], left_index=True, right_index=True)
         overview_df = overview_df.merge(news_df[['news_id']], left_index=True, right_index=True)
-        overview_df.to_sql('city_overview', sqlite_connection, if_exists='append', index=False)
+        overview_df.to_sql('city_overview', conn, if_exists='append', index=False)
 
         # 外部キー制約のチェックを再度有効にする
         cursor.execute('PRAGMA foreign_keys = ON;')
