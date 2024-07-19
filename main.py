@@ -5,7 +5,7 @@ from display_data import display_data
 
 #________________________________________________________________________________________________________________________
 # Local実行モード（サーバーからAPIでデータ取得せず、Local上のDumpからデータ取得する。API呼び出し回数を消費しないためのモード）
-IS_LOCAL_MODE = True
+IS_LOCAL_MODE = False
 # デバッグ用のprintを表示するモード
 IS_DEBUG_PRINT_MODE = True
 
