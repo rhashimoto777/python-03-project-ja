@@ -32,7 +32,7 @@ def display_data():
 
    for i in range(len(df_integrated)):
       elem = df_integrated.iloc[i]
-      print(f'\n【{elem.loc["overview_id"]}】{elem.loc["jp_name"]} : {elem.loc["temperature"]:.1f}℃, {elem.loc["weather"]}\n')
+      print(f'\n【{elem.loc["overview_id"]}】{elem.loc["jp_name"]} : {elem.loc["temperature"]:.1f}°C, {elem.loc["weather"]}\n')
       print(f' - {elem.loc["news_1"]}')
       print(f' - {elem.loc["news_2"]}')
       print(f' - {elem.loc["news_3"]}\n')
